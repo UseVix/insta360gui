@@ -1,0 +1,10 @@
+<library path="insta360gui_rviz_plugins">
+  <class name="insta360gui/CameraPerspectivePanel"
+         type="insta360gui::CameraPerspectivePanel"
+         base_class_type="rviz_common::Panel">
+    <description>
+      Roll/pitch/yaw sliders that incrementally rotate the camera orientation and publish it as
+      geometry_msgs/Quaternion (RViz-native version of camera_perspective_slider).
+    </description>
+  </class>
+</library>
