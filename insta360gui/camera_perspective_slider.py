@@ -89,6 +89,11 @@ class CameraOrientationPublisher(Node):
             # Optional: Print to console to verify
             # self.get_logger().info(f'Published Q: x={msg.x}, y={msg.y}, z={msg.z}, w={msg.w}')
             self.lastframe=time.perf_counter()
+            self.str_x.set(f"x: {self.Camera_Orientatation_Quaternion1.x:.3f}")
+            self.str_y.set(f"y: {self.Camera_Orientatation_Quaternion1.y:.3f}")
+            self.str_z.set(f"z: {self.Camera_Orientatation_Quaternion1.z:.3f}")
+            self.str_w.set(f"w: {self.Camera_Orientatation_Quaternion1.w:.3f}")
+
     def letgocallback(self,event):
         self.Camera_Orientatation_Quaternion = copy.deepcopy(self.Camera_Orientatation_Quaternion1)
         # Optional: Print to console to verify
@@ -96,10 +101,6 @@ class CameraOrientationPublisher(Node):
         self.slider1.set(0)
         self.slider2.set(0)
         self.slider3.set(0)
-        self.str_x.set(f"x: {self.Camera_Orientatation_Quaternion.x:.3f}")
-        self.str_y.set(f"y: {self.Camera_Orientatation_Quaternion.y:.3f}")
-        self.str_z.set(f"z: {self.Camera_Orientatation_Quaternion.z:.3f}")
-        self.str_w.set(f"w: {self.Camera_Orientatation_Quaternion.w:.3f}")
 
     def spin_ros(self):
         """Non-blocking ROS spin to keep the node alive alongside Tkinter."""
